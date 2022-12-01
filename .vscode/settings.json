@@ -17,5 +17,9 @@
           "icon": "terminal-bash"
         }
       },
-      "terminal.integrated.defaultProfile.windows": "GitBash"
+      "terminal.integrated.defaultProfile.windows": "GitBash",
+      "cSpell.words": [
+        "starrating",
+        "toastr"
+      ]
 }

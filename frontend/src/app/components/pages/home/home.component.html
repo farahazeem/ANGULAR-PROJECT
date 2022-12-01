@@ -1,0 +1,41 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found
+[visible]="!items || !items.length"
+resetLinkText="Reset Search">
+</app-not-found>
+<ul>
+  <li *ngFor="let item of items">
+    <a routerLink="/item/{{item.id}}">
+      <img [src]="item.imageUrl" [alt]="item.name" />
+      <div class="content">
+        <div class="name">
+          {{item.name}}
+        </div>
+        <span class="favorite {{item.favorite ? '' : 'not'}}"></span>
+        <!-- <div class="stars">
+          <star-rating
+          [value]="item.stars"
+          [totalstars]="5"
+          checkedcolor="red"
+          uncheckedcolor="black"
+          size="22px"
+          [readonly]="true">
+        </star-rating>
+        </div> -->
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of item.origins">
+              {{origin}}
+            </span>
+          </div>
+          <div class="price">
+            <span>
+              {{item.price | currency}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

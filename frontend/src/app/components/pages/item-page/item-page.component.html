@@ -1,0 +1,34 @@
+<app-not-found [visible]="!item" notFoundMessage="Item not found" resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="item" class="container">
+  <img [src]="item.imageUrl" alt="item.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{item.name}}
+      </span>
+      <span class="favorite {{item.favorite? '': 'not'}}"></span>
+    </div>
+    <!-- <div class="rating">
+      <star-rating [value]="item.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="25px"
+        [readonly]="true">
+      </star-rating>
+    </div> -->
+    <div class="origins">
+      <span *ngFor="let origin of item.origins">
+        {{origin}}
+      </span>
+    </div>
+    <div class="tags">
+      <a *ngFor="let tag of item.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+    <div class="price">
+      <span>{{item.price | currency }}</span>
+    </div>
+
+    <button (click)="addToCart()">Add To Cart</button>
+  </div>
+</div>
