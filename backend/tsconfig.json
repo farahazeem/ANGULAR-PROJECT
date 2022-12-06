@@ -8,5 +8,6 @@
       "emitDecoratorMetadata": true,
       "esModuleInterop": true
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*"], //by this we are telling angular that all the typescript
+    //files inside the src folder should be selected to be transpiled in to javascript
 }

@@ -23,10 +23,10 @@ router.get("/seed", asyncHandler(
 
 router.post("/login", asyncHandler(
     async (req, res) => {
-      const {email, password} = req.body;
-      const user = await UserModel.findOne({email , password});
+      const {email, password} = req.body; // destructuring assignment
+      const user = await UserModel.findOne({email}); //we'hv to find the user based on the email only, not password
         
-       if(user) {
+       if(user && (await bcrypt.compare(password,user.password))) { //after finding the user, compare password from req.body with the saved password
         res.send(generateTokenResponse(user));
        }
        else{

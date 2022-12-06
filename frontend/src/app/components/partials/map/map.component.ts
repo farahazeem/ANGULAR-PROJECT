@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { Map, LatLngTuple, map, tileLayer, icon, Marker, LatLng, marker, LatLngExpression, LeafletMouseEvent } from 'leaflet';
 import { LocationService } from 'src/app/services/location.service';
 import { Order } from 'src/app/shared/models/Order';
@@ -7,9 +7,14 @@ import { Order } from 'src/app/shared/models/Order';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnChanges {
   @Input()
   order!:Order;
+
+  //Created this later when we needed a readOnly map for payment page
+  @Input()
+  readOnly = false;
+
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
@@ -36,8 +41,33 @@ export class MapComponent implements OnInit {
   currentMarker!:Marker;
   constructor(private locationService:LocationService) { }
 
-  ngOnInit(): void {
+
+  //While working on the payment page, we change this lifeCycle hook
+  //from ngOnInit() to ngOnChanges()
+  ngOnChanges(): void {
+    if(!this.order) return;
     this.initializeMap();
+
+    if(this.readOnly && this.addressLatLng){
+      this.showLocationOnReadonlyMode();
+    }
+  }
+
+  showLocationOnReadonlyMode(){
+    const m = this.map;
+    this.setMarker(this.addressLatLng);
+    m.setView(this.addressLatLng, this.MARKER_ZOOM_LEVEL);
+
+    //disabling all the map option so user can't edit it anyway
+    m.dragging.disable();
+    m.touchZoom.disable();
+    m.doubleClickZoom.disable();
+    m.scrollWheelZoom.disable();
+    m.boxZoom.disable();
+    m.keyboard.disable();
+    m.off('click');
+    m.tap?.disable();
+    this.currentMarker.dragging?.disable();
   }
 
   initializeMap() {
@@ -86,10 +116,16 @@ export class MapComponent implements OnInit {
   //this method is not that much needed for frontend but
   //might be helpful for mongoDB since it doesn't accept float values
   set addressLatLng(latlng: LatLng){
+    if(!latlng.lat.toFixed) return; // if the address is coming from server (i.e. in case of payment Page) its already in string format, so we exit from this function
+
     latlng.lat = parseFloat(latlng.lat.toFixed(8));
     latlng.lng = parseFloat(latlng.lng.toFixed(8));
     this.order.addressLatLng = latlng;
     console.log(this.order.addressLatLng);
+  }
+
+  get addressLatLng(){
+    return this.order.addressLatLng!;
   }
 
 }

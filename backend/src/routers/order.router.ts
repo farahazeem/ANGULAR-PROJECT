@@ -28,9 +28,8 @@ asyncHandler(async (req:any, res:any) => {
 })
 )
 
-
 router.get('/newOrderForCurrentUser', asyncHandler( async (req:any,res ) => {
-    const order= await getNewOrderForCurrentUser(req);
+    const order = await getNewOrderForCurrentUser(req); 
     if(order) res.send(order);
     else res.status(HTTP_BAD_REQUEST).send();
 }))
@@ -54,6 +53,10 @@ router.get('/track/:id', asyncHandler( async (req, res) => {
     const order = await OrderModel.findById(req.params.id);
     res.send(order);
 }))
+
+// router.post('/pay', asyncHandler( async (req:any, res) => {
+//     const {paymentId} = req.body;
+// }))
 
 export default router;
 

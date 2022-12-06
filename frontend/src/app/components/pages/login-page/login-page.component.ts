@@ -20,13 +20,14 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
+      email:['', [Validators.required, Validators.email]], //if we have more than one validators, we put them inside another array
       password:['', Validators.required]
     });
 
     //by using snapshot we mean we r grabbing the latest value of activatedRoute(i.e. the current route), n hence we don't even need to subscribe
     //and we use queryParams to grab everything after the ? sign of the url e.g. http://...?returnUrl=/checkout
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+    console.log(this.returnUrl); //resulting undefined
   }
 
   get fc(){
