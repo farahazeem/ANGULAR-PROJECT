@@ -25,6 +25,9 @@ export class LoadingInterceptor implements HttpInterceptor {
           if (event.type === HttpEventType.Response){
             this.handleHideLoading();
           }
+        },
+        error: (_) => {
+          this.handleHideLoading();
         }
       })
     );

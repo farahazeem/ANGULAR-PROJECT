@@ -26,12 +26,12 @@
         2. Add ts
         3. Add html
         4. Add css
-6. Tgas Bar
+6. Tags Bar
     1. Create Tag model
     2. Add sample tags to data.ts
-    3. Food service
+    3. Item service
         1. Add get all tags method
-        2. Add get all foods by tag method
+        2. Add get all items by tag method
     4. Add tags route
     5. Show tag results in Home component
     6. Generate Tags component
@@ -50,7 +50,7 @@
     1. Create CartItem Model
     2. Create Cart Model
     3. Generate Cart service
-    4. Add to Cart Button in Food Page
+    4. Add to Cart Button in Item Page
     5. Generate Cart page component
         1. Add Route
         2. Add ts
@@ -79,7 +79,7 @@
     9. npm install nodemon ts-node --save-dev
     10. Add urs.ts to frontend
     11. Add HttpClient module
-    12. Update food service
+    12. Update item service
 11. Login Page
     1. Generate Component
         1. Add to routes

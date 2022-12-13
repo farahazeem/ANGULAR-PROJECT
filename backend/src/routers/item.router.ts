@@ -6,8 +6,8 @@ const router = Router();
 
 router.get("/seed", asyncHandler(
     async (req, res) => {
-    const foodsCount = await ItemModel.countDocuments();
-    if(foodsCount> 0){
+    const itemsCount = await ItemModel.countDocuments();
+    if(itemsCount > 0){
     res.send("Seed is already done!");
     return;
     }
@@ -26,8 +26,8 @@ router.get("/",asyncHandler(
   router.get("/search/:searchTerm", asyncHandler(
     async (req, res) => {
       const searchRegex = new RegExp(req.params.searchTerm, 'i');
-      const foods = await ItemModel.find({name: {$regex:searchRegex}})
-      res.send(foods);
+      const items = await ItemModel.find({name: {$regex:searchRegex}})
+      res.send(items);
     }
   ))
   
@@ -65,15 +65,15 @@ router.get("/",asyncHandler(
 
   router.get("/tag/:tagName",asyncHandler(
     async (req, res) => {
-      const foods = await ItemModel.find({tags: req.params.tagName})
-      res.send(foods);
+      const items = await ItemModel.find({tags: req.params.tagName})
+      res.send(items);
     }
   ))
   
   router.get("/:itemId", asyncHandler(
     async (req, res) => {
-      const food = await ItemModel.findById(req.params.itemId);
-      res.send(food);
+      const item = await ItemModel.findById(req.params.itemId);
+      res.send(item);
     }
   ))
 

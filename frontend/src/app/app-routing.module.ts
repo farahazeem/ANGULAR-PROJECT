@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
 import { ItemPageComponent } from './components/pages/item-page/item-page.component';
@@ -19,9 +18,9 @@ const routes: Routes = [
   { path: 'cart-page', component:CartPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'checkout', component: CheckoutPageComponent }, //, canActivate: [AuthGuard]
-  { path: 'payment', component: PaymentPageComponent }, //, canActivate: [AuthGuard]
-  { path: 'track/:orderId', component: OrderTrackPageComponent } //, canActivate: [AuthGuard]
+  { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthGuard] }, //
+  { path: 'payment', component: PaymentPageComponent, canActivate: [AuthGuard] }, //, canActivate: [AuthGuard]
+  { path: 'track/:orderId', component: OrderTrackPageComponent, canActivate: [AuthGuard] } //, canActivate: [AuthGuard]
 ];
 
 @NgModule({

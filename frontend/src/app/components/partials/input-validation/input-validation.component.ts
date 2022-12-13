@@ -31,7 +31,7 @@ export class InputValidationComponent implements OnInit, OnChanges {
     });
     this.control.valueChanges.subscribe(() => {
       this.checkValidation();
-    });
+    })
   }
 
   checkValidation() {

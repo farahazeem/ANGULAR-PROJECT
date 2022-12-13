@@ -12,7 +12,7 @@ export class CartService {
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
   constructor() { }
 
-  addToCart(itemAttr:Item):void {
+  addToCart(itemAttr:Item): void {
    let cartItem = this.cart.items.find(item => item.item.id === itemAttr.id);
    if (cartItem)
    return;
@@ -37,12 +37,12 @@ export class CartService {
     this.setCartToLocalStorage();
   }
 
-  clearCart(){
+  clearCart() {
     this.cart = new Cart();
     this.setCartToLocalStorage();
   }
 
-  getCartObservable():Observable<Cart>{
+  getCartObservable():Observable<Cart> {
     return this.cartSubject.asObservable();
   }
 
