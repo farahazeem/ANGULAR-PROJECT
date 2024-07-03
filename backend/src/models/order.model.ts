@@ -13,13 +13,13 @@ export const LatLngSchema = new Schema<LatLng>({
 });
 
 export interface OrderItem {
-  item: Item; //not sure if it has to be food: Item; or current??
+  item: Item; //not sure if it has to be Item; or current??
   price: number;
   quantity: number;
 }
 
 export const OrderItemSchema = new Schema<OrderItem>({
-  item: { type: ItemSchema, required: true }, ////not sure if it has to be food key
+  item: { type: ItemSchema, required: true }, ////not sure if it has to be item key
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
 });

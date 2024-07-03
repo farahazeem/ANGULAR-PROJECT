@@ -10,7 +10,7 @@ export const sample_items: any[] = [
     origins: ['italy'],
     stars: 4.5,
     imageUrl: 'assets/item-1.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    tags: ['Dresses'],
   },
   {
     id:'2',
@@ -20,7 +20,7 @@ export const sample_items: any[] = [
     origins: ['persia', 'middle east', 'china'],
     stars: 4.7,
     imageUrl: 'assets/item-2.jpg',
-    tags: ['SlowFood', 'Lunch'],
+    tags: ['Dresses'],
   },
   {
     id:'3',
@@ -30,7 +30,7 @@ export const sample_items: any[] = [
     origins: ['germany', 'us'],
     stars: 3.5,
     imageUrl: 'assets/item-3.jpg',
-    tags: ['FastFood', 'Hamburger'],
+    tags: ['Dresses'],
   },
   {
     id:'4',
@@ -39,8 +39,8 @@ export const sample_items: any[] = [
     favorite: true,
     origins: ['belgium', 'france'],
     stars: 3.3,
-    imageUrl: 'assets/item-4.jpg',
-    tags: ['FastFood', 'Fry'],
+    imageUrl: 'assets/item-13.jpg',
+    tags: ['Tops'],
   },
   {
     id:'5',
@@ -49,8 +49,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['india', 'asia'],
     stars: 3.0,
-    imageUrl: 'assets/item-5.jpg',
-    tags: ['SlowFood', 'Soup'],
+    imageUrl: 'assets/item-14.jpg',
+    tags: ['Tops'],
   },
   {
     id:'6',
@@ -59,8 +59,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-6.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-4.jpg',
+    tags: ['Tops'],
   },
   {
     id:'7',
@@ -69,8 +69,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-7.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-5.jpg',
+    tags: ['Jackets & Coats'],
   },
   {
     id:'8',
@@ -79,8 +79,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-8.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-6.jpg',
+    tags: ['Jackets & Coats'],
   },
   {
     id:'9',
@@ -89,8 +89,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-9.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-8.jpg',
+    tags: ['Jackets & Coats'],
   },
   {
     id:'10',
@@ -99,8 +99,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-10.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-7.jpg',
+    tags: ['Pants'],
   },
   {
     id:'11',
@@ -109,8 +109,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-11.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-9.jpg',
+    tags: ['Pants'],
   },
   {
     id:'12',
@@ -119,8 +119,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-12.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-11.jpg',
+    tags: ['Skirts'],
   },
   {
     id:'13',
@@ -129,8 +129,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-13.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-10.jpg',
+    tags: ['Jumpsuits & Playsuits'],
   },
   {
     id:'14',
@@ -139,8 +139,8 @@ export const sample_items: any[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/item-14.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/item-12.jpg',
+    tags: ['Jumpsuits & Playsuits'],
   },
 ]
 
