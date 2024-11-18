@@ -1,11 +1,8 @@
 # Tech set we used in this project
 
-Angular
+Angular 13
 Nodejs
 Mongodb
-
-This project used the same tech set as react project, but the diff is
-only the react replaced by Angular
 
 # Follow the steps below to run this project
 
