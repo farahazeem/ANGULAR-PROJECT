@@ -1,11 +1,12 @@
-div {
+.search-container {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  position: relative;
 }
 
-input {
+.search-container  input {
   border-radius: 10rem 0 0 10rem;
   border: none;
   height: 3rem;
@@ -17,7 +18,7 @@ input {
   outline: none;
 }
 
-div button {
+.search-container button {
   color: grey;
   height: 3rem;
   width: 5rem;
@@ -30,7 +31,42 @@ div button {
   outline: none;
 }
 
-div button:hover {
+.search-container button:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.typeahead-dropdown {
+  position: absolute; 
+  top: auto;
+  width: 100%;
+}
+
+.typeahead-dropdown ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-red) white;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: block;
+  width: 22rem;
+}
+
+.typeahead-dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.typeahead-dropdown li:hover {
+  background: #f0f0f0;
 }

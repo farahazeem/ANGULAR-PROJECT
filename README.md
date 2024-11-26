@@ -23,7 +23,13 @@ npm start
 
 \*\* api can be viewed at http://localhost:5000
 
-#
+To connect with the MongoDB Altas database
+
+Navigate to mongoDB Altas website
+Login with Google/GitHub credentials
+Connect to the Cluster
+
+# Steps Involved in Development
 
 1. Install development tools
 2. Create Angular App
