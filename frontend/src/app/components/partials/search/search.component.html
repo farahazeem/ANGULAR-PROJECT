@@ -1,4 +1,22 @@
-<div>
-<input #s type="text" placeholder="Search items of your choice" (keyup.enter)="search(s.value)" [value]="searchTerm" />
-<button (click)="search(s.value)">Search</button>
+<div class="search-container">
+  <input
+    id="search"
+    type="text"
+    placeholder="Search items of your choice"
+    (input)="onTextChange($event)" 
+    [value]="term"
+    autocomplete="off"
+  />
+  <button (click)="search(term)">Search</button>
+</div>
+
+<div *ngIf="filteredItems$ | async as filteredItems" class="typeahead-dropdown">
+  <ul>
+    <li
+      *ngFor="let item of filteredItems"
+      (click)="selectBook(item?.name)"
+    >
+    {{ item?.name }}
+    </li>
+  </ul>
 </div>
