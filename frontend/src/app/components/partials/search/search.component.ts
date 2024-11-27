@@ -25,25 +25,32 @@ export class SearchComponent implements OnInit {
     this.itemService.getAll().subscribe((items) => {
       this.items = items;
     });
+
+    this.filteredItems$ = this.searchTerm.pipe(
+      debounceTime(500), // Wait for 500ms after typing stops
+      distinctUntilChanged(), // Only emit when the search term actually changes
+      switchMap((searchTerm) => {
+        if (!searchTerm) {
+          return new Observable<any[]>((observer) => {
+            observer.next([]);
+            observer.complete();
+          });
+        }
+
+        return new Observable<any[]>((observer) => {
+          const filteredItems = this.items.filter((item) =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          observer.next(filteredItems);
+          observer.complete();
+        });
+      })
+    );
   }
 
   onTextChange(e: any) {
     this.term = e.target.value;
     this.searchTerm.next(this.term);
-
-    this.filteredItems$ = new Observable<any[]>((observer) => {
-      if (!this.term) {
-        observer.next([]);
-        observer.complete();
-      } else {
-        // Filter items based on the current search term
-        const filteredItems = this.items.filter((item) =>
-          item.name.toLowerCase().includes(this.term.toLowerCase())
-        );
-        observer.next(filteredItems);
-        observer.complete();
-      }
-    });
   }
 
   search(term: string): void {
